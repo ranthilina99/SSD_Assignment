@@ -1,0 +1,10 @@
+.Homepage{
+    background-image: url('../images/1087589.jpg');
+}
+.page_role {
+    font-size: 5em;
+    font-family: serif;
+    color: transparent;
+    text-align: center;
+    animation: effect 2s linear infinite;
+}

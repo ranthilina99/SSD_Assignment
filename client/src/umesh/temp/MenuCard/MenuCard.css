@@ -1,0 +1,22 @@
+
+.w3-card-4:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.zoom {
+    padding: 50px;
+    transition: transform .2s;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.5);
+}
+.menuCardContainer:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
