@@ -1,6 +1,4 @@
-# Group-ID - 2021S2_REG_WE_39 
-
-## Project Name - Gym Management System
+## Project Name - SSD Assignment
 
 ## Group Details
 
