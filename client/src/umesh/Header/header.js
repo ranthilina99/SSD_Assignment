@@ -159,22 +159,6 @@ class Header extends Component {
                                 <li className="nav-item dropdown">
                                     <UncontrolledDropdown nav>
                                         <DropdownToggle nav caret>
-                                            Stock
-                                        </DropdownToggle>
-                                        <DropdownMenu>
-                                            <DropdownItem onClick={this.AddStock}>
-                                                Add Stock
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={this.ViewStock}>
-                                                View Stock
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </UncontrolledDropdown>
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <UncontrolledDropdown nav>
-                                        <DropdownToggle nav caret>
                                             Users
                                         </DropdownToggle>
                                         <DropdownMenu>
@@ -187,28 +171,6 @@ class Header extends Component {
                                             </DropdownItem>
                                         </DropdownMenu>
                                     </UncontrolledDropdown>
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <UncontrolledDropdown nav>
-                                        <DropdownToggle nav caret>
-                                            Supplier
-                                        </DropdownToggle>
-                                        <DropdownMenu>
-                                            <DropdownItem onClick={this.AddSupplier}>
-                                                Add Supplier
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={this.ViewSupplier}>
-                                                View Suppliers
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </UncontrolledDropdown>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/createStore">Add Store</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/workoutAdminShow">View Workout</a>
                                 </li>
                                 {/*<li className="nav-item dropdown">*/}
                                 {/*    <UncontrolledDropdown nav>*/}
@@ -237,26 +199,7 @@ class Header extends Component {
                                        href="/manager">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/adminViewStockCategory">View Stock</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/empViewStore">View Store</a>
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <UncontrolledDropdown nav>
-                                        <DropdownToggle nav caret>
-                                            Workout
-                                        </DropdownToggle>
-                                        <DropdownMenu>
-                                            <DropdownItem onClick={this.AddCWorkout}>
-                                                Add Workout
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={this.ViewWorkout}>
-                                                View Workout
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </UncontrolledDropdown>
+                                    <a className="nav-link" href="#">Send Document</a>
                                 </li>
                             </ul>
                             :
@@ -269,28 +212,9 @@ class Header extends Component {
                                        href="/worker">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/viewStore">Store</a>
+                                    <a className="nav-link" href="/sentMessage">Send Message</a>
                                 </li>
-                                <li className="nav-item dropdown">
-                                    <UncontrolledDropdown nav>
-                                        <DropdownToggle nav caret>
-                                            Workout
-                                        </DropdownToggle>
-                                        <DropdownMenu>
-                                            <DropdownItem onClick={this.BuyWorkout}>
-                                                Buy Workout
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={this.ViewWorkoutUser}>
-                                                My Workout
-                                            </DropdownItem>
-                                            <DropdownItem divider/>
-                                            <DropdownItem onClick={this.ViewAllWorkoutUser}>
-                                                All Workouts
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </UncontrolledDropdown>
-                                </li>
+                              
                                 {/*<li className="nav-item">*/}
                                 {/*    <a className="nav-link" href="#">Cart</a>*/}
                                 {/*</li>*/}

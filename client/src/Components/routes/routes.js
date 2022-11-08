@@ -15,6 +15,7 @@ import GetAllUsers from "../../umesh/pages/admin/getAllUser";
 import AdminRegister from "../../umesh/pages/admin/adminAddEmployee";
 import Reset from "../../umesh/pages/reset/reset";
 import ConfirmEmail from "../../Actions/confirmEmail";
+import SentMessage from "../../umesh/pages/worker/sentMessage";
 
 function Routes() {
   return (
@@ -38,6 +39,7 @@ function Routes() {
               <Route path="/adminReg" component={AdminRegister} />
 
               <Route path="/users/reset_password/:id" component={Reset} />
+              <Route path="/sentMessage" component={SentMessage} />
               <Route
                 path="/users/activate/:auth_token"
                 component={ConfirmEmail}
