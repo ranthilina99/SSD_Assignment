@@ -23,7 +23,7 @@ class Admin extends Component {
         })
         axios({
             method: 'get',
-            url: 'http://localhost:5000/users/',
+            url: 'https://localhost:5000/users/',
             headers: {
                 Authorization: token
             },

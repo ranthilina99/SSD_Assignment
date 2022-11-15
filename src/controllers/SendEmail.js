@@ -38,11 +38,11 @@ const sendEmail = (to, url, txt) => {
     const mailOptions = {
         from: SENDER_EMAIL_ADDRESS,
         to: to,
-        subject: "Equinox Gym - 2021",
+        subject: "SSD Assignment - 2022",
         html: `
             <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
-            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to Equinox 2021.</h2>
-            <h1>Congratulations! Equinox 2021.
+            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to SSD Assignment 2022.</h2>
+            <h1>Congratulations! SSD Assignment 2022.
             </h1>           
             <a href=${url} style="background: red; text-decoration: none; color: white; padding: 10px 20px; margin: 10px 0; display: inline-block;">${txt}</a>
             <p>if the button is not working, please select the link below:</p>

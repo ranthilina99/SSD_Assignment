@@ -2,47 +2,40 @@ import React, { Component } from "react";
 
 import swat from "sweetalert2";
 import axios from "axios";
+import FileBase from "react-file-base64";
 import { SERVER_ADDRESS } from "../../../Constants/Constants";
 import { FormFeedback, FormGroup, Input, Label } from "reactstrap";
 import { Form } from "react-bootstrap";
 import logo from "../../../images/new.png";
-import CryptoJS from 'crypto-js';
+import CryptoJS from "crypto-js";
 
-const MessageAlert = () => {
+const FileAlert = () => {
   swat.fire({
     position: "center",
     icon: "success",
-    title: " Message Created successful",
+    title: "File Upload successful",
     showConfirmButton: false,
     timer: 3000,
   });
 };
 
-const MessageFail = (message) => {
+const FileFail = (message) => {
   swat.fire({
     icon: "error",
     title: "Oops...",
     text: message,
   });
 };
-const secretPass = "XkhZG4fW2t2W";
-const encryptData = (text) => {
-    const data = CryptoJS.AES.encrypt(
-      JSON.stringify(text),
-      secretPass
-    ).toString();
 
-    return data
-  };
-
-export default class sentMessage extends Component {
+export default class sentFile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       message: "",
       token: "",
-      id:"",
-      isLoggedIn:"",
+      id: "",
+      isLoggedIn: "",
+      PImage: "",
       touched: {
         password: false,
         confirm_password: false,
@@ -107,28 +100,27 @@ export default class sentMessage extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    let encryptMessage = encryptData(this.state.message)
-    let user = {
-      message: encryptMessage,
+    let file = {
+      imageUrl: this.state.PImage,
       user: this.state.id,
     };
-    console.log("DATA TO SEND", user);
-    if ((this.state.message = "")) {
-      let message = "Message Error";
-      MessageFail(message);
+    console.log("DATA TO SEND", file);
+    if ((this.state.imageUrl = "")) {
+      let message = "File Error";
+      FileFail(message);
     } else {
       axios
-        .post(SERVER_ADDRESS + "/messages/create_message", user, {
+        .post(SERVER_ADDRESS + "/file_upload/create_file", file, {
           headers: { Authorization: this.state.token },
         })
         .then((response) => {
-          MessageAlert();
+          FileAlert();
           this.clear();
         })
         .catch((error) => {
           console.log(error.message);
-          let message = "Message Error";
-          MessageFail(message);
+          let message = "File Error";
+          FileFail(message);
         });
     }
   }
@@ -141,21 +133,17 @@ export default class sentMessage extends Component {
             <img alt="" src={logo} width="250" height="100" align="center" />
           </div>
           &nbsp;
-          <h3 className="reset_title">NEW MESSAGE</h3>
+          <h3 className="reset_title">NEW FILE UPLOAD</h3>
           <FormGroup>
-            <Label for="exampleEmail">New Enter The Message</Label>
-            <div>
-              <Input
-                type="textarea"
-                className="form-control"
-                name="message"
-                rows="5"
-                id="message"
-                placeholder="Enter Message"
-                value={this.state.message}
-                onChange={this.onChange}
-                required
-              />
+            <Label for="exampleEmail">Please Upload the Image</Label>
+            <div className="mb-3">
+              <div>
+                <FileBase
+                  type="file"
+                  multiple={false}
+                  onDone={({ base64 }) => (this.state.PImage = base64)}
+                />
+              </div>
             </div>
           </FormGroup>
           &nbsp;

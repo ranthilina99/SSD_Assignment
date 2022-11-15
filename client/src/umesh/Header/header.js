@@ -103,7 +103,7 @@ class Header extends Component {
         })
         axios({
             method: 'get',
-            url: 'http://localhost:5000/users/',
+            url: 'https://localhost:5000/users/',
             headers: {
                 Authorization: token
             },
@@ -199,7 +199,7 @@ class Header extends Component {
                                        href="/manager">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Send Document</a>
+                                    <a className="nav-link" href="/sent_file">Send Document</a>
                                 </li>
                             </ul>
                             :

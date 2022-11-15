@@ -13,7 +13,7 @@ function getClientPath() {
     if (process.env.NODE_ENV === 'production') {
         return document.location.origin;
     } else {
-        return 'http://localhost:3000';
+        return 'https://localhost:3000';
     }
 }
 
@@ -21,6 +21,6 @@ function getServerPath() {
     if (process.env.NODE_ENV === 'production') {
         return document.location.origin;
     } else {
-        return 'http://localhost:5000';
+        return 'https://localhost:5000';
     }
 }
