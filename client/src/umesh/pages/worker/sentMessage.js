@@ -8,7 +8,7 @@ import { Form } from "react-bootstrap";
 import logo from "../../../images/new.png";
 import CryptoJS from 'crypto-js';
 
-const MessageAlert = () => {
+const MessageAlert = (message) => {
   swat.fire({
     position: "center",
     icon: "success",
@@ -16,6 +16,7 @@ const MessageAlert = () => {
     showConfirmButton: false,
     timer: 3000,
   });
+ 
 };
 
 const MessageFail = (message) => {
@@ -40,6 +41,7 @@ export default class sentMessage extends Component {
     super(props);
     this.state = {
       message: "",
+      message1: "",
       token: "",
       id:"",
       isLoggedIn:"",
@@ -95,7 +97,7 @@ export default class sentMessage extends Component {
   }
 
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value, message1: e.target.value });
   }
 
   clear() {
@@ -113,6 +115,7 @@ export default class sentMessage extends Component {
       user: this.state.id,
     };
     console.log("DATA TO SEND", user);
+  
     if ((this.state.message = "")) {
       let message = "Message Error";
       MessageFail(message);
@@ -122,8 +125,11 @@ export default class sentMessage extends Component {
           headers: { Authorization: this.state.token },
         })
         .then((response) => {
-          MessageAlert();
+          MessageAlert(this.state.message);
           this.clear();
+          setTimeout(() => {
+            window.confirm(this.state.message1)
+          }, 4000);
         })
         .catch((error) => {
           console.log(error.message);

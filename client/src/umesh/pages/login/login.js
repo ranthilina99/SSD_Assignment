@@ -132,9 +132,9 @@ const Login = ({loginUser, isLoggedIn}) => {
                     LOGIN
                 </button>
                 &nbsp;
-                <Form.Group className="login_register">
+                {/* <Form.Group className="login_register">
                     <Form.Label>Don't have an account?&nbsp;<a className="register"  href="/register">Register</a></Form.Label>
-                </Form.Group>
+                </Form.Group> */}
             </Form>
         </div>
     );

@@ -7,7 +7,6 @@ import { SERVER_ADDRESS } from "../../../Constants/Constants";
 import { FormFeedback, FormGroup, Input, Label } from "reactstrap";
 import { Form } from "react-bootstrap";
 import logo from "../../../images/new.png";
-import CryptoJS from "crypto-js";
 
 const FileAlert = () => {
   swat.fire({
